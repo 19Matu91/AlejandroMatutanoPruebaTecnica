@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Box, Text, Image, DataTable, Avatar, Button, TextInput, RadioButtonGroup } from 'grommet'
+import { Box, Text, DataTable, Avatar, TextInput } from 'grommet'
 import AppContext from '../contexts/AppContext'
 
 const MoviesListComponent = ({ mylist = false }) => {
