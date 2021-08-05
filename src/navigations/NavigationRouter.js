@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Grommet, Box } from 'grommet';
 import Home from '../screens/Home';
 import Search from '../screens/Search';
@@ -24,9 +24,9 @@ const NavigationRouter = () => {
 const theme = {
     global: {
         font: {
-            family: 'Roboto',
-            size: '18px',
-            height: '20px',
+            family: 'Impact',
+            size: '14px',
+            height: '14px',
         },
     },
 };

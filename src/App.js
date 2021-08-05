@@ -5,7 +5,11 @@ import NavigationRouter from "./navigations/NavigationRouter";
 
 function App() {
 
-  const [app, dispatchApp] = useReducer(AppReducer, null);
+  const [app, dispatchApp] = useReducer(AppReducer, {
+    search: '',
+    results: [],
+    mylist: []
+  });
 
   return (
     <AppContext.Provider value={{ app, dispatchApp }}>
