@@ -25,8 +25,8 @@ const theme = {
     global: {
         font: {
             family: 'Impact',
-            size: '18px',
-            height: '20px',
+            size: '14px',
+            height: '14px',
         },
     },
 };

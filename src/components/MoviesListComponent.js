@@ -1,23 +1,30 @@
 import React, { useContext } from 'react'
-import { Box, Text, Image } from 'grommet'
+import { Box, Text, Image, DataTable, Avatar } from 'grommet'
 import AppContext from '../contexts/AppContext'
 
 const MoviesListComponent = ({ }) => {
 
     const { app } = useContext(AppContext)
 
-    return <Box>
-        {
-            app?.results?.map(item => <Box direction="row">
-                <Image
-                    fit="cover"
-                    src={`${process.env.REACT_APP_IMAGES}${item?.poster_path}`}
-                />
-                <Text>{item?.original_title}</Text>
-                <Text>{item?.release_date}</Text>
-            </Box>)
-        }
-    </Box>
+    return <DataTable
+        columns={[
+            {
+                property: 'poster_path',
+                render: datum => <Avatar src={`${process.env.REACT_APP_IMAGES}${datum.poster_path}`} />
+            },
+            {
+                property: 'original_title',
+                header: <Text>Título</Text>,
+                render: datum => <Box>{datum.original_title}</Box>
+            },
+            {
+                property: 'release_date',
+                header: <Text>Fecha</Text>,
+                render: datum => <Box>{datum.release_date}</Box>
+            }
+        ]}
+        data={app?.results}
+    />
 }
 
 export default MoviesListComponent

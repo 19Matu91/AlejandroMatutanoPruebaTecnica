@@ -4,19 +4,10 @@ import SearchComponent from '../components/SearchComponent'
 import useFetch from '../hooks/useFetch'
 import AppContext from '../contexts/AppContext'
 
-const Home = ({ history }) => {
-
-    const { app, dispatchApp } = useContext(AppContext)
-    const { fetchData } = useFetch()
-
-    const navigateWithQuery = () => {
-        fetchData(`${process.env.REACT_APP_MOVIE_LIST}?api_key=${process.env.REACT_APP_API_KEY}&query=${app.search}`)
-            .then(data => dispatchApp({ type: 'UPDATE_APP', data: { ...app, results: data.results } }))
-            .then(() => history.push('/search'))
-    }
+const Home = ({ }) => {
 
     return <Box>
-        <SearchComponent navigateWithQuery={navigateWithQuery} />
+        <SearchComponent />
     </Box>
 }
 
