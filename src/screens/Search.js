@@ -1,13 +1,13 @@
 import React from 'react'
-import { Box } from 'grommet'
+import { Box, Button } from 'grommet'
 import MoviesListComponent from '../components/MoviesListComponent'
-import SearchComponent from '../components/SearchComponent'
 
-const Search = ({ }) => {
+const Search = ({ history }) => {
 
-    return <Box gap="medium">
-        <Box margin={{ vertical: 'medium' }}>
-            <SearchComponent />
+    return <Box gap="medium" direction="row" margin={{vertical: "small"}}>
+        <Box gap="xlarge" >
+            <Button primary label="< Volver al buscador" onClick={e => history.push("/")} />
+            <Button primary label="Ver mis valoraciones >" onClick={e => history.push("/mylist")} />
         </Box>
         <Box>
             <MoviesListComponent />

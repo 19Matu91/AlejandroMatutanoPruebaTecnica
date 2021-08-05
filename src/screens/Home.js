@@ -1,13 +1,14 @@
-import React, { useContext } from 'react'
-import { Box } from 'grommet'
+import React from 'react'
+import { Box, Button } from 'grommet'
 import SearchComponent from '../components/SearchComponent'
-import useFetch from '../hooks/useFetch'
-import AppContext from '../contexts/AppContext'
 
-const Home = ({ }) => {
+const Home = ({ history }) => {
 
-    return <Box>
-        <SearchComponent />
+    return <Box pad={{ horizontal: "small", vertical: "medium" }} gap="medium">
+        <Box direction="row" gap="xlarge">
+            <Button primary label="Ver mis valoraciones >" onClick={e => history.push("/mylist")} />
+        </Box>
+        <SearchComponent history={history} />
     </Box>
 }
 

@@ -6,7 +6,9 @@ import NavigationRouter from "./navigations/NavigationRouter";
 function App() {
 
   const [app, dispatchApp] = useReducer(AppReducer, {
-    search: ''
+    search: '',
+    results: [],
+    mylist: []
   });
 
   return (

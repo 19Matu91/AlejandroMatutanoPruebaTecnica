@@ -4,7 +4,7 @@ import { Search } from 'grommet-icons'
 import AppContext from '../contexts/AppContext'
 import useFetch from '../hooks/useFetch'
 
-const SearchComponent = ({ history }) => {
+const SearchComponent = ({ history, navigate = true }) => {
 
     const { app, dispatchApp } = useContext(AppContext)
     const { fetchData } = useFetch()
@@ -12,6 +12,7 @@ const SearchComponent = ({ history }) => {
     const navigateWithQuery = () => {
         fetchData(`${process.env.REACT_APP_MOVIE_LIST}?api_key=${process.env.REACT_APP_API_KEY}&query=${app.search}`)
             .then(data => dispatchApp({ type: 'UPDATE_APP', data: { ...app, results: data.results } }))
+            .then(() => navigate && history.push('/search'))
     }
 
     return <Keyboard onEnter={navigateWithQuery}>
