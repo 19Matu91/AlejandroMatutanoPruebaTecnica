@@ -9,8 +9,6 @@ La prueba consistirá en realizar una mini-webapp en la que se mostrará un list
 - Se puede utilizar cualquier librería de componentes, sea pública o propia. 
 - Tiene que tener algún test unitario. 
 - El guardado de información debería hacerse con react-redux o los hooks useContext+useReducer. 
-- Usar Typescript. 
-
 ## Entrega:
 - Se creará un repositorio en GITHUB 
 - En rama master se mantendrá la estructura básica 
